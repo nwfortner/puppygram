@@ -16,6 +16,8 @@ app.get('/messages', handlers.getPosts);
 
 app.post('/messages', handlers.savePost);
 
+app.post('/users', handlers.createUser);
+
 
 app.listen(3000, function() {
   console.log('backbone server listening on port 3000');

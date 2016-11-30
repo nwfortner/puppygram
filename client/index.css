@@ -35,3 +35,30 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+.nav {
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  font-size: large;
+  height: 40px;
+}
+
+.addPostButton {
+  height: 90%;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+
+.addCaption {
+  height: 70%;
+}
+
+.postUrl {
+  height: 70%;
+}
+
+.cloudinary_fileupload {
+    
+}

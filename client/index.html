@@ -24,6 +24,8 @@
     <script src='views/postCollectionView.js'></script>
     <script src='views/addPostView.js'></script>
     <script src='views/appView.js'></script>
+    <script src='views/signupView.js'></script>
+    <script src='router.js'></script>
     <script type="text/javascript">
     $('body').bind('cloudinarydone', function(e, data) {
       window.postUrl = data.jqXHR.responseJSON.url;
@@ -35,8 +37,12 @@
 
     <script>
 
-    var appView = new AppView();
-    $('body').append(appView.$el);
+    var router = new Router();
+    $(document).ready(function() {
+      Backbone.history.start({
+        pushState: false,
+      });
+    });
     </script>
 
   </body>

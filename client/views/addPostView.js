@@ -17,10 +17,15 @@ var AddPostView = Backbone.View.extend({
         imgUrl: $('.postUrl').val(),
         caption: $('.addCaption').val()
       }
-    }).done(function(post) {that.collection.fetch();});
+    }).done(function(post) {
+      that.collection.fetch();
+      $('.addCaption').val('');
+      $('.postUrl').val('');
+    });
   },
 
   render: function() {
+    this.$el.addClass('nav');
     this.$el.html([
       $.cloudinary.unsigned_upload_tag('slbywqj3', {cloud_name: 'puppygram'}),
       `<input type='text' class='postUrl' placeholder='postUrl'/>

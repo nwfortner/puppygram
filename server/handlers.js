@@ -1,4 +1,5 @@
 var Post = require('./models/postModel.js');
+var User = require('./models/userModel.js');
 
 var savePost = function(req, res) {
   console.log(req.body);
@@ -31,5 +32,22 @@ var getPosts = function(req, res) {
   });
 };
 
+var createUser = function(req, res) {
+  var user = new User({
+    username: req.body.username,
+    password: req.body.password
+  });
+  user.save(function(err, user) {
+    if(err) {
+      console.log(err);
+      res.status(500).json(err);
+    }else {
+      console.log(user.username + ' was added to the database');
+      res.status(201).send('you successfully signed up!!! :)');
+    }
+  });
+};
+
 module.exports.savePost = savePost;
 module.exports.getPosts = getPosts;
+module.exports.createUser = createUser;
