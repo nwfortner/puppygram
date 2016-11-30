@@ -3,7 +3,9 @@ var PostCollection = Backbone.Collection.extend({
     this.fetch({reset: true});
   },
   url: 'http://localhost:3000/messages',
+  
   parse: function(posts) {
-    console.log(posts);
-  }
+    return posts;
+  },
+  model: Post
 });

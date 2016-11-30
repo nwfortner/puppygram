@@ -3,14 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel='stylesheet' type='text/css' href='index.css'></link>
   </head>
   <body>
+    <script src='bower_components/moment/moment.js'></script>
     <script src='bower_components/underscore/underscore.js'></script>
     <script src='bower_components/jquery/dist/jquery.js'></script>
     <script src='bower_components/backbone/backbone.js'></script>
 
+    <script src='bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js'></script>
+    <script src='bower_components/blueimp-load-image/js/load-image.all.min.js'></script>
+    <script src='bower_components/blueimp-file-upload/js/jquery.fileupload.js'></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src='bower_components/blueimp-file-upload/js/jquery.fileupload-image.js'></script>
+    <script src='bower_components/blueimp-file-upload/js/jquery.iframe-transport.js'></script>
+    <script src='bower_components/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js'></script>
+
     <script src='models/postModel.js'></script>
     <script src='collections/postCollection.js'></script>
+    <script src='views/postCollectionView.js'></script>
+    <script src='views/addPostView.js'></script>
+    <script src='views/appView.js'></script>
+    <script type="text/javascript">
+    $('body').bind('cloudinarydone', function(e, data) {
+      window.postUrl = data.jqXHR.responseJSON.url;
+      $('.postUrl').val(postUrl);
+      console.log(data);
+      return true;
+    });
+    </script>
+
+    <script>
+
+    var appView = new AppView();
+    $('body').append(appView.$el);
+    </script>
 
   </body>
 </html>

@@ -1,3 +1,3 @@
-var Post = Backbone.model.extend({
+var Post = Backbone.Model.extend({
 
 });
