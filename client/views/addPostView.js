@@ -13,7 +13,7 @@ var AddPostView = Backbone.View.extend({
       url: 'http://localhost:3000/messages',
       method: 'POST',
       data: {
-        username: 'Nick',
+        username: username,
         imgUrl: $('.postUrl').val(),
         caption: $('.addCaption').val()
       }

@@ -16,6 +16,7 @@ var SignupView = Backbone.View.extend({
         password: $('.password').val()
       }
     }).done(function(message) {
+      window.username = $('.username').val();
       router.navigate('index', {trigger: true});
       console.log(message);
     });
